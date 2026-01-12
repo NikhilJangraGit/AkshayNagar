@@ -20,7 +20,10 @@ import {
   Video,
   MessageSquare,
   Compass,
-  Palette
+  Palette,
+  Camera,
+  Film,
+  Building2
 } from 'lucide-react';
 import logoImg from './assets/Akshay-logo.png';
 
@@ -48,7 +51,6 @@ const DurationBadge = ({ duration }) => (
   </div>
 );
 
-// New Component for Play on Hover functionality
 const HoverVideoCard = ({ videoSrc, isVertical, onClick, duration, showBadge }) => {
   const videoRef = useRef(null);
 
@@ -243,7 +245,7 @@ export default function App() {
             </span>
           </div>
           <div className="hidden lg:flex items-center gap-8 text-sm font-medium uppercase tracking-widest text-[10px]">
-            {['Home', 'About', 'Projects', 'Tools'].map((item) => (
+            {['Home', 'About', 'Services', 'Projects', 'Tools'].map((item) => (
               <a key={item} href={`#${item.toLowerCase() === 'tools' ? 'services' : item.toLowerCase() === 'projects' ? 'longform' : item.toLowerCase()}`} className="relative hover:text-orange-500 transition-colors group">
                 {item}
                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-orange-500 group-hover:w-full transition-all duration-300" />
@@ -265,7 +267,7 @@ export default function App() {
       {/* MOBILE MENU */}
       <div className={`fixed inset-0 z-[60] bg-[#0a0a0c] flex flex-col items-center justify-center gap-8 text-2xl font-black uppercase tracking-widest transition-all duration-500 ${isMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'}`}>
         <button className="absolute top-6 right-6 text-white" onClick={() => setIsMenuOpen(false)}><X className="w-8 h-8" /></button>
-        {['Home', 'About', 'Projects', 'Tools'].map((item) => (
+        {['Home', 'About', 'Services', 'Projects', 'Tools'].map((item) => (
           <a key={item} href={`#${item.toLowerCase() === 'tools' ? 'services' : item.toLowerCase() === 'projects' ? 'longform' : item.toLowerCase()}`} onClick={() => setIsMenuOpen(false)} className="hover:text-orange-500 transition-colors">{item}</a>
         ))}
         <button onClick={() => window.open("https://wa.me/917404977405", "_blank")} className="mt-4 bg-gradient-to-r from-orange-500 to-red-600 text-white px-10 py-4 rounded-full font-black shadow-lg">Hire Me</button>
@@ -281,7 +283,7 @@ export default function App() {
           </div>
           <h1 className="hero-animate text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight mb-6 uppercase leading-[1.2]">
             PROFESSIONAL VIDEO <br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 via-red-500 to-orange-600 uppercase">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 via-red-500 to-orange-600 uppercase italic">
               EDITOR & VIDEOGRAPHER
             </span>
           </h1>
@@ -298,6 +300,68 @@ export default function App() {
             <button onClick={() => scrollToSection('longform')} className="px-10 md:px-12 py-4 md:py-5 bg-white/5 border border-white/10 text-white rounded-xl md:rounded-2xl font-bold backdrop-blur-sm hover:bg-white/10 transition-all uppercase tracking-widest text-xs md:text-sm active:scale-95">
               VIEW PROJECTS
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* BRANDS WORKED WITH */}
+      <section className="py-12 md:py-20 border-y border-white/5 bg-[#0a0a0c]/50">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <p className="text-center text-slate-500 text-[10px] md:text-xs font-black uppercase tracking-[0.3em] mb-12 reveal">Brands Worked With</p>
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-20 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-700 reveal">
+             <div className="flex flex-col items-center group">
+                <span className="text-2xl md:text-4xl font-black text-white tracking-tighter">AGROPURE</span>
+             </div>
+             <div className="flex flex-col items-center group">
+                <span className="text-2xl md:text-4xl font-black text-white tracking-tighter italic">PANBRAND</span>
+             </div>
+             <div className="flex items-center gap-2">
+                <Building2 className="w-6 h-6 md:w-8 md:h-8 text-white" />
+                <span className="text-lg md:text-xl font-bold text-white uppercase tracking-widest">Creators & Businesses</span>
+             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section id="services" className="py-20 md:py-32 px-4 md:px-6 relative overflow-hidden reveal">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-600/5 blur-[120px] rounded-full pointer-events-none" />
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter italic">Services</h2>
+            <div className="h-1.5 w-24 bg-gradient-to-r from-orange-500 to-red-600 rounded-full mt-4 mx-auto"></div>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* VIDEO EDITING */}
+            <div className="group p-8 md:p-12 bg-white/5 border border-white/5 rounded-[2rem] hover:border-orange-500/30 transition-all duration-500 reveal">
+              <div className="w-16 h-16 bg-orange-500/10 rounded-2xl flex items-center justify-center text-orange-500 mb-8 group-hover:bg-orange-500 group-hover:text-white transition-all duration-500">
+                <Film className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-black text-white mb-6 uppercase tracking-tight">Video Editing</h3>
+              <ul className="space-y-4">
+                {['Reels & Shorts', 'YouTube Videos', 'Ad Videos', 'Podcasts', 'UGC', 'Teasers', 'Food Videos'].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-slate-400 font-medium">
+                    <CheckCircle2 className="w-5 h-5 text-orange-500 shrink-0" /> {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* VIDEOGRAPHY */}
+            <div className="group p-8 md:p-12 bg-white/5 border border-white/5 rounded-[2rem] hover:border-red-500/30 transition-all duration-500 reveal">
+              <div className="w-16 h-16 bg-red-500/10 rounded-2xl flex items-center justify-center text-red-500 mb-8 group-hover:bg-red-500 group-hover:text-white transition-all duration-500">
+                <Camera className="w-8 h-8" />
+              </div>
+              <h3 className="text-2xl md:text-3xl font-black text-white mb-6 uppercase tracking-tight">Videography</h3>
+              <ul className="space-y-4">
+                {['Podcast Shoots', 'Ad Shoots', 'UGC Shoots', 'Instagram Reel Shoots'].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-slate-400 font-medium">
+                    <CheckCircle2 className="w-5 h-5 text-red-500 shrink-0" /> {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -434,7 +498,7 @@ export default function App() {
       </section>
 
       {/* TOOLKIT - UPDATED CARDS */}
-      <section id="services" className="py-20 md:py-32 px-4 md:px-6 bg-[#0a0a0c] reveal">
+      <section className="py-20 md:py-32 px-4 md:px-6 bg-[#0a0a0c] reveal">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white uppercase mb-4 tracking-tighter italic">The Toolkit</h2>
           <div className="h-1 w-20 bg-gradient-to-r from-orange-500 to-red-600 rounded-full mx-auto mb-16"></div>
