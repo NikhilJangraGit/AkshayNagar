@@ -291,13 +291,8 @@ export default function App() {
             Helping brands and creators grow through high-quality video editing and storytelling.
           </p>
           <div className="hero-animate flex flex-col sm:flex-row gap-4 md:gap-6 items-center">
-            <button 
-              onClick={() => setActiveVideo({ src: "https://www.w3schools.com/html/mov_bbb.mp4", isVertical: false })} 
-              className="btn-glow px-10 md:px-12 py-4 md:py-5 bg-gradient-to-br from-orange-500 to-red-600 text-white rounded-xl md:rounded-2xl font-black shadow-xl transition-all uppercase tracking-widest text-xs md:text-sm flex items-center gap-3 hover:brightness-110 active:scale-95"
-            >
-              SHOWREEL <Play className="w-4 h-4 md:w-5 md:h-5 fill-current" />
-            </button>
-            <button onClick={() => scrollToSection('longform')} className="px-10 md:px-12 py-4 md:py-5 bg-white/5 border border-white/10 text-white rounded-xl md:rounded-2xl font-bold backdrop-blur-sm hover:bg-white/10 transition-all uppercase tracking-widest text-xs md:text-sm active:scale-95">
+           
+            <button onClick={() => scrollToSection('longform')} className="btn-glow px-10 md:px-12 py-4 md:py-5 bg-gradient-to-br from-orange-500 to-red-600 text-white rounded-xl md:rounded-2xl font-black shadow-xl transition-all uppercase tracking-widest text-xs md:text-sm flex items-center gap-3 hover:brightness-110 active:scale-95">
               VIEW PROJECTS
             </button>
           </div>
