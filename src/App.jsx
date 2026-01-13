@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import { FaWhatsapp } from 'react-icons/fa';
-import AkshayImg from "./assets/akshay-image.jpg";
+import AkshayImg from "./assets/akshay-image.JPG";
 import { 
   Mail, 
   Play, 
