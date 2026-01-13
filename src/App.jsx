@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import { FaWhatsapp } from 'react-icons/fa';
+import AkshayImg from "./assets/akshay-image.jpg";
 import { 
   Mail, 
   Play, 
@@ -110,7 +111,7 @@ const StarBackground = () => (
     {[...Array(30)].map((_, i) => {
       const size = Math.random() * 3 + 1.2;
       const angle = (Math.random() * 360);
-      const distance = 100 + Math.random() * 120;
+      const distance = 170 + Math.random() * 120;
       const duration = 10 + Math.random() * 10; 
       const delay = Math.random() * -20;
       const x = Math.cos(angle * (Math.PI / 180)) * distance;
@@ -283,7 +284,7 @@ export default function App() {
           </div>
           <h1 className="hero-animate text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tight mb-6 uppercase leading-[1.2]">
             PROFESSIONAL VIDEO <br />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 via-red-500 to-orange-600 uppercase italic">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-orange-400 via-red-500 to-orange-600 uppercase">
               EDITOR & VIDEOGRAPHER
             </span>
           </h1>
@@ -305,10 +306,10 @@ export default function App() {
           <p className="text-center text-slate-500 text-[10px] md:text-xs font-black uppercase tracking-[0.3em] mb-12 reveal">Brands Worked With</p>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-20 grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all duration-700 reveal">
              <div className="flex flex-col items-center group">
-                <span className="text-2xl md:text-4xl font-black text-white tracking-tighter">AGROPURE</span>
+                <span className="text-lg md:text-xl font-bold text-white tracking-widest">AGROPURE</span>
              </div>
              <div className="flex flex-col items-center group">
-                <span className="text-2xl md:text-4xl font-black text-white tracking-tighter italic">PANBRAND</span>
+                <span className="text-lg md:text-xl font-bold text-white tracking-widest">PANBRAND</span>
              </div>
              <div className="flex items-center gap-2">
                 <Building2 className="w-6 h-6 md:w-8 md:h-8 text-white" />
@@ -367,7 +368,7 @@ export default function App() {
           <div className="hidden lg:flex w-full lg:w-1/2 relative justify-center items-center min-h-[500px]">
             <StarBackground />
             <div className="relative z-10 w-full max-w-[420px] aspect-square flex items-center justify-center group">
-              <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?auto=format&fit=crop&q=80&w=800" alt="Akshay" className="w-full h-full object-contain filter brightness-110 drop-shadow-[0_0_20px_rgba(249,115,22,0.2)]" />
+              <img src={AkshayImg} alt="Akshay" className="w-full h-full object-contain filter brightness-110 drop-shadow-[0_0_20px_rgba(249,115,22,0.2)]" />
             </div>
           </div>
           <div className="w-full lg:w-1/2 reveal">
