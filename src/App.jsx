@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import { FaWhatsapp } from 'react-icons/fa';
-import AkshayImg from "./assets/akshay-image.jpg";
+import AkshayImg from "./assets/akshay-image.JPG";
 import { 
   Mail, 
   Play, 
@@ -186,20 +186,21 @@ export default function App() {
   };
 
   const ytProjects = [
-    { id: 1, duration: "00:45", videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/long.mp4" },
+    { id: 1, duration: "00:45", videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/priyanka%20teasor%20mp4%20(1).mp4" },
     { id: 2, duration: "00:33", videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/long%20(2).mp4" },
   ];
 
   const reelProjects = [
-    { id: 19, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/6%20reel%20sudhir%20kove.mp4" },
+    { id: 19, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/2%20reel%20priyanka.mp4" },
     { id: 16, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/Sample%20r.mp4" },
-    { id: 7, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/reel%20(3).MP4" },
+    { id: 7, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/priyanka%201.mp4" },
     { id: 15, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/SaveInsta.App%20-%203027107148419002186_30172539797.mp4" },
     { id: 6, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/reeltwo.mp4" },
     { id: 8, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/reel%20(2).mp4" },
     { id: 17, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/Om%20space%20webinar%20video%205.mp4" },
     { id: 18, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/Embark%20on%20a%20flavor%20filled%20video%20with%20our%20Peri%20Peri%20Poha.%20This%20vibrant%20and%20zesty%20dish%20combines%20th.mp4" },
     { id: 5, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/reelone.MOV" },
+    { id: 20, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/6%20reel%20sudhir%20kove.mp4" },
   ];
 
   const shootproject = [
@@ -324,7 +325,7 @@ export default function App() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-600/5 blur-[120px] rounded-full pointer-events-none" />
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter italic">Services</h2>
+            <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter">Services</h2>
             <div className="h-1.5 w-24 bg-gradient-to-r from-orange-500 to-red-600 rounded-full mt-4 mx-auto"></div>
           </div>
           
@@ -393,7 +394,7 @@ export default function App() {
       <section className="py-20 md:py-32 px-4 md:px-6 bg-[#0d0d0f] relative">
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16 reveal">
-            <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter italic">Why Work With Me?</h2>
+            <h2 className="text-3xl md:text-5xl font-black text-white uppercase tracking-tighter">Why Work With Me?</h2>
             <div className="h-1.5 w-24 bg-gradient-to-r from-orange-500 to-red-600 rounded-full mt-4 mx-auto"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -421,7 +422,7 @@ export default function App() {
       <section id="longform" className="py-10 md:py-16 bg-[#0d0d0f] border-y border-white/5 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 text-center reveal">
-            <h2 className="text-4xl md:text-6xl font-black text-white mb-3 uppercase tracking-tighter italic">Long Form Videos</h2>
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-3 uppercase tracking-tighter">Long Form Videos</h2>
             <div className="h-1 w-24 md:w-32 bg-gradient-to-r from-orange-500 to-red-600 rounded-full mx-auto"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-10">
@@ -447,7 +448,7 @@ export default function App() {
       <section id="shorts" className="py-10 md:py-16 bg-[#0a0a0c] border-b border-white/5 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 text-center reveal">
-            <h2 className="text-4xl md:text-6xl font-black text-white mb-3 uppercase tracking-tighter italic">Reels & Shorts</h2>
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-3 uppercase tracking-tighter">Reels & Shorts</h2>
             <div className="h-1 w-24 md:w-32 bg-gradient-to-r from-orange-500 to-red-600 rounded-full mx-auto"></div>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-10">
@@ -472,7 +473,7 @@ export default function App() {
       <section id="videography" className="py-10 md:py-16 bg-[#0a0a0c] border-b border-white/5 px-4 md:px-6">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 text-center reveal">
-            <h2 className="text-4xl md:text-6xl font-black text-white mb-3 uppercase tracking-tighter italic">Videography</h2>
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-3 uppercase tracking-tighter">Videography</h2>
             <div className="h-1 w-24 md:w-32 bg-gradient-to-r from-orange-500 to-red-600 rounded-full mx-auto"></div>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-10">
@@ -496,7 +497,7 @@ export default function App() {
       {/* TOOLKIT - UPDATED CARDS */}
       <section className="py-20 md:py-32 px-4 md:px-6 bg-[#0a0a0c] reveal">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-white uppercase mb-4 tracking-tighter italic">The Toolkit</h2>
+          <h2 className="text-3xl md:text-4xl font-black text-white uppercase mb-4 tracking-tighter">The Toolkit</h2>
           <div className="h-1 w-20 bg-gradient-to-r from-orange-500 to-red-600 rounded-full mx-auto mb-16"></div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10">
             {[
@@ -507,7 +508,7 @@ export default function App() {
             ].map((tool, idx) => (
               <div key={idx} className="p-8 bg-[#151518] border border-white/5 rounded-3xl hover:border-orange-500/30 transition-all text-left">
                 <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center text-white mb-8 shadow-lg">{React.cloneElement(tool.icon, { className: "w-6 h-6" })}</div>
-                <h4 className="text-xl md:text-2xl font-bold text-white mb-4 uppercase tracking-tighter italic">{tool.title}</h4>
+                <h4 className="text-xl md:text-2xl font-bold text-white mb-4 uppercase tracking-tighter">{tool.title}</h4>
                 <p className="text-sm md:text-base text-slate-400 leading-relaxed">{tool.desc}</p>
               </div>
             ))}
@@ -520,7 +521,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10 text-center">
           <div className="reveal mb-20 md:mb-32">
             <div className="relative rounded-3xl md:rounded-[4rem] bg-gradient-to-br from-orange-600 to-red-800 p-10 md:p-24 text-center overflow-hidden shadow-2xl">
-              <h2 className="text-3xl md:text-7xl font-black text-white mb-8 uppercase italic leading-tight">Let's Go Viral</h2>
+              <h2 className="text-3xl md:text-7xl font-black text-white mb-8 uppercase leading-tight">Let's Go Viral</h2>
               <div className="flex justify-center">
                 <a href="https://wa.me/917404977405" target="_blank" rel="noopener noreferrer" className="px-10 md:px-14 py-4 md:py-6 bg-white text-red-600 rounded-xl md:rounded-2xl font-black text-xs md:text-sm hover:scale-105 transition-all uppercase tracking-widest flex items-center gap-3">
                   Start a Project <ArrowRight className="w-5 h-5" />
