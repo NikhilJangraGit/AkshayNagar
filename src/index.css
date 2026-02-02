@@ -1,1 +1,9 @@
 @import "tailwindcss";
+@keyframes slowRhythmicOrbit {
+  0% {
+    transform: translate(-50%, -50%) translate(0, 0);
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(var(--tx), var(--ty));
+  }
+}

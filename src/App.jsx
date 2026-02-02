@@ -204,15 +204,8 @@ export default function App() {
   ];
 
   const shootproject = [
-    { id: 11, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Shoot/shoot/2025_07_06_16_06_IMG_2486.MOV" },
-    { id: 12, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Shoot/shoot/2025_07_06_16_17_IMG_2490.MOV" },
-    { id: 13, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Shoot/shoot/2025_07_06_16_18_IMG_2491.MOV" },
-    { id: 14, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Shoot/shoot/2025_07_06_16_32_IMG_2492.MOV" },
-    { id: 22, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Shoot/shoot/2025_07_06_16_33_IMG_2493.MOV" },
-    { id: 23, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Shoot/shoot/2025_07_06_16_35_IMG_2494.MOV" },
-    { id: 24, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Shoot/shoot/2025_07_06_16_35_IMG_2495.MOV" },
-    { id: 25, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Shoot/shoot/2025_07_06_16_35_IMG_2496.MOV" },
-  ];
+    { id: 11, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Shoot/shoot/shoot%20(1).mp4" },
+    ];
 
   return (
     <div className="min-h-screen bg-[#0a0a0c] text-slate-200 font-sans selection:bg-orange-500/30 overflow-x-hidden scroll-smooth">
@@ -336,8 +329,8 @@ export default function App() {
                 <Film className="w-8 h-8" />
               </div>
               <h3 className="text-2xl md:text-3xl font-black text-white mb-6 uppercase tracking-tight">Video Editing</h3>
-              <ul className="space-y-4">
-                {['Reels & Shorts', 'YouTube Videos', 'Ad Videos', 'Podcasts', 'UGC', 'Teasers', 'Food Videos'].map((item) => (
+              <ul className="space-y-4 grid grid-cols-2">
+                {['Reels & Shorts', 'YouTube Videos', 'Ad Videos', 'Podcasts', 'UGC','Food Videos'].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-slate-400 font-medium">
                     <CheckCircle2 className="w-5 h-5 text-orange-500 shrink-0" /> {item}
                   </li>
@@ -351,7 +344,7 @@ export default function App() {
                 <Camera className="w-8 h-8" />
               </div>
               <h3 className="text-2xl md:text-3xl font-black text-white mb-6 uppercase tracking-tight">Videography</h3>
-              <ul className="space-y-4">
+              <ul className="space-y-4 grid grid-cols-2">
                 {['Podcast Shoots', 'Ad Shoots', 'UGC Shoots', 'Instagram Reel Shoots'].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-slate-400 font-medium">
                     <CheckCircle2 className="w-5 h-5 text-red-500 shrink-0" /> {item}
@@ -368,16 +361,20 @@ export default function App() {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 md:gap-20 items-center text-center lg:text-left">
           <div className="hidden lg:flex w-full lg:w-1/2 relative justify-center items-center min-h-[500px]">
             <StarBackground />
-            <div className="relative z-10 w-full max-w-[420px] aspect-square flex items-center justify-center group">
-              <img src={AkshayImg} alt="Akshay" className="w-full h-full object-contain filter brightness-110 drop-shadow-[0_0_20px_rgba(249,115,22,0.2)]" />
+            <div className="relative z-10 w-full max-w-[420px] aspect-square rounded-md flex items-center justify-center group">
+              <img src={AkshayImg} alt="Akshay" className="w-90 h-full rounded-xl filter brightness-110 drop-shadow-[0_0_20px_rgba(249,115,22,0.2)]" />
             </div>
           </div>
           <div className="w-full lg:w-1/2 reveal">
             <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">About Me</h2>
             <div className="h-1.5 w-24 bg-gradient-to-r from-orange-500 to-red-600 rounded-full mt-3 mb-8 mx-auto lg:ml-0"></div>
             <p className="text-slate-400 text-base md:text-lg mb-6 leading-relaxed">
-              Akshay Nagar is a video editor and videographer with a strong foundation in graphic design. With over 2.5 years of experience, he has worked on ads, reels, YouTube videos, podcasts, UGC, and food videos.
-            </p>
+             I’m Akshay Nagar, a video editor and videographer with a strong foundation in graphic design, which gives me a sharp eye for visuals, composition, and storytelling. <br/>
+             With over 2.5 years of professional experience, I’ve worked on a wide range of video projects for brands, businesses, and creators. My work includes digital ads, Instagram reels, YouTube videos, podcasts, UGC content, and food videos, all tailored to perform well on digital platforms. <br />
+             I’ve edited videos across multiple industries such as Google GMB ads, network marketing, real estate, business coaching, fashion, and Vastu Shastra, understanding the unique audience and communication style each niche requires. <br />
+             Along with traditional editing, I also integrate AI-generated videos and images into my projects wherever it adds creative value, helping brands stand out with modern and engaging content. <br />
+             In addition to editing, I actively work as a videographer, handling podcast shoots, UGC shoots, ad shoots, and Instagram reel shoots, which allows me to manage projects from concept to final delivery with a clear creative vision.
+             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
               {[{ icon: <Award />, val: "100+ Projects", lbl: "Completed" }, { icon: <User />, val: "50+ Clients", lbl: "Globally" }].map((stat, i) => (
                 <div key={i} className="flex items-center justify-center lg:justify-start gap-4 bg-white/5 p-4 rounded-2xl border border-white/5 lg:bg-transparent lg:p-0 lg:border-0">
