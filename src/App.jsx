@@ -191,11 +191,11 @@ export default function App() {
   ];
 
   const reelProjects = [
-    { id: 19, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/2%20reel%20priyanka.mp4" },
-    { id: 16, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/Sample%20r.mp4" },
+    { id:21, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/L2%20ai_compressed.mp4" },    { id: 16, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/Sample%20r.mp4" },
     { id: 7, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/priyanka%201.mp4" },
     { id: 15, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/SaveInsta.App%20-%203027107148419002186_30172539797.mp4" },
     { id: 6, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/reeltwo.mp4" },
+    { id: 19, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/2%20reel%20priyanka.mp4" },
     { id: 8, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/reel%20(2).mp4" },
     { id: 17, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/Om%20space%20webinar%20video%205.mp4" },
     { id: 18, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/Embark%20on%20a%20flavor%20filled%20video%20with%20our%20Peri%20Peri%20Poha.%20This%20vibrant%20and%20zesty%20dish%20combines%20th.mp4" },
