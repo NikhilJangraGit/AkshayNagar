@@ -24,7 +24,9 @@ import {
   Palette,
   Camera,
   Film,
-  Building2
+  Building2,
+  Folder,
+  ArrowLeft
 } from 'lucide-react';
 import logoImg from './assets/Akshay-logo.png';
 
@@ -151,12 +153,16 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeVideo, setActiveVideo] = useState(null);
   
-  const INITIAL_LONG_FORM = 2;
-  const INITIAL_SHORTS = 4;
-  const INITIAL_SHOOTS = 4;
-  const [visibleLongForm, setVisibleLongForm] = useState(INITIAL_LONG_FORM);
-  const [visibleShorts, setVisibleShorts] = useState(INITIAL_SHORTS);
-  const [visibleShoots, setVisibleShoots] = useState(INITIAL_SHOOTS);
+  const [activeFolder, setActiveFolder] = useState(null);
+  
+  const INITIAL_VIDEOS = 8;
+  const [visibleVideos, setVisibleVideos] = useState(INITIAL_VIDEOS);
+
+  const handleFolderClick = (folder) => {
+    setActiveFolder(folder);
+    setVisibleVideos(INITIAL_VIDEOS);
+    scrollToSection('works');
+  };
 
   useEffect(() => {
     const observerOptions = { threshold: 0.05, rootMargin: '0px 0px -50px 0px' };
@@ -171,7 +177,7 @@ export default function App() {
 
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, [visibleLongForm, visibleShorts, visibleShoots]);
+  }, [visibleVideos, activeFolder]);
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
@@ -185,27 +191,66 @@ export default function App() {
     }
   };
 
-  const ytProjects = [
-    { id: 1, duration: "00:45", videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/priyanka%20teasor%20mp4%20(1).mp4" },
-    { id: 2, duration: "00:33", videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/long%20(2).mp4" },
-  ];
+  const workFolders = [
+    {
+      id: 'ai',
+      name: 'AI Video',
+      videos: [
+        { id: 1, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/ai%20%20video/Daily%20burner%20%26%20night%20burner_compressed.mp4", isVertical: true },
+        { id: 2, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/ai%20%20video/L2%20(Rhyming%20lines)_compressed.mp4", isVertical: true },
+        { id: 3, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/ai%20%20video/Magbliss_compressed.mp4", isVertical: true },
+        { id: 4, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/ai%20%20video/SLEEP_compressed.mp4", isVertical: true },
 
-  const reelProjects = [
-    { id:21, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/L2%20ai_compressed.mp4" },    { id: 16, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/Sample%20r.mp4" },
-    { id: 7, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/priyanka%201.mp4" },
-    { id: 15, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/SaveInsta.App%20-%203027107148419002186_30172539797.mp4" },
-    { id: 6, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/reeltwo.mp4" },
-    { id: 19, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/2%20reel%20priyanka.mp4" },
-    { id: 8, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/reel%20(2).mp4" },
-    { id: 17, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/Om%20space%20webinar%20video%205.mp4" },
-    { id: 18, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/Embark%20on%20a%20flavor%20filled%20video%20with%20our%20Peri%20Peri%20Poha.%20This%20vibrant%20and%20zesty%20dish%20combines%20th.mp4" },
-    { id: 5, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/reelone.MOV" },
-    { id: 20, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/6%20reel%20sudhir%20kove.mp4" },
+      ]
+    },
+    {
+      id: 'brand',
+      name: 'Brand Video',
+      videos: [
+        { id: 5, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/brand%20video/Embark%20on%20a%20flavor%20filled%20video%20with%20our%20Peri%20Peri%20Poha.%20This%20vibrant%20and%20zesty%20dish%20combines%20th.mp4", isVertical: true },
+        { id: 6, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/brand%20video/SaveInsta.App%20-%203027107148419002186_30172539797.mp4", isVertical: true },
+        { id: 7, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/brand%20video/SaveInsta.App%20-%203056843051026591178.mp4", isVertical: true }
+      ]
+    },
+    {
+      id: 'podcast',
+      name: 'Podcast Teaser and Ad Video',
+      videos: [
+        { id: 8, duration: "00:45", videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/podcast%20teaser/pool%20ads_compressed.mp4", isVertical: false },
+        { id: 9, duration: "00:33", videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/podcast%20teaser/priyanka%20teasor%20mp4_compressed.mp4", isVertical: false },
+      ]
+    },
+    {
+      id: 'reels',
+      name: 'Reels',
+      videos: [
+        { id: 10, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/Reels/2%20ai%20video_compressed.mp4", isVertical: true },
+        { id: 11, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/Reels/2%20reel%20priyanka_compressed.mp4", isVertical: true },
+        { id: 12, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/Reels/4%20ad%20amongh_compressed.MP4", isVertical: true },
+        { id: 13, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/Reels/6%20reel%20sudhir%20kove_compressed.mp4", isVertical: true },
+        { id: 14, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/Reels/IMG_0286.MOV", isVertical: true },
+        { id: 15, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/Reels/Om%20space%20webinar%20video%205_compressed.mp4", isVertical: true },
+        { id: 16, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/Reels/priyanka%201_compressed.mp4", isVertical: true },
+        { id: 17, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/Reels/sudhir_compressed.mp4", isVertical: true },
+        { id: 18, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/Reels/traders_compressed.mp4", isVertical: true }
+      ]
+    },
+    {
+      id: 'shoot',
+      name: 'Shoot',
+      videos: [
+        { id: 19, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/Shoot/shoot_compressed.mp4", isVertical: true }
+      ]
+    },
+    {
+      id: 'ugc',
+      name: 'UGC Video',
+      videos: [
+        { id: 20, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/Ugc%20video/Face%20oil%20video%202_compressed.mp4", isVertical: true },
+        { id: 21, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Final/final%20video/Ugc%20video/MEERA%20TRADER%20SIMPLE_compressed.mp4", isVertical: true },
+      ]
+    }
   ];
-
-  const shootproject = [
-    { id: 11, videoSrc: "https://pub-03644fa742f0401d833053a6506b2229.r2.dev/Shoot/shoot/shoot%20(1).mp4" },
-    ];
 
   return (
     <div className="min-h-screen bg-[#0a0a0c] text-slate-200 font-sans selection:bg-orange-500/30 overflow-x-hidden scroll-smooth">
@@ -240,8 +285,8 @@ export default function App() {
             </span>
           </div>
           <div className="hidden lg:flex items-center gap-8 text-sm font-medium uppercase tracking-widest text-[10px]">
-            {['Home', 'About', 'Services', 'Projects', 'Tools'].map((item) => (
-              <a key={item} href={`#${item.toLowerCase() === 'tools' ? 'services' : item.toLowerCase() === 'projects' ? 'longform' : item.toLowerCase()}`} className="relative hover:text-orange-500 transition-colors group">
+            {['Home', 'About', 'Services', 'Works', 'Tools'].map((item) => (
+              <a key={item} href={`#${item.toLowerCase() === 'tools' ? 'services' : item.toLowerCase() === 'works' ? 'works' : item.toLowerCase()}`} className="relative hover:text-orange-500 transition-colors group">
                 {item}
                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-orange-500 group-hover:w-full transition-all duration-300" />
               </a>
@@ -262,8 +307,8 @@ export default function App() {
       {/* MOBILE MENU */}
       <div className={`fixed inset-0 z-[60] bg-[#0a0a0c] flex flex-col items-center justify-center gap-8 text-2xl font-black uppercase tracking-widest transition-all duration-500 ${isMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'}`}>
         <button className="absolute top-6 right-6 text-white" onClick={() => setIsMenuOpen(false)}><X className="w-8 h-8" /></button>
-        {['Home', 'About', 'Services', 'Projects', 'Tools'].map((item) => (
-          <a key={item} href={`#${item.toLowerCase() === 'tools' ? 'services' : item.toLowerCase() === 'projects' ? 'longform' : item.toLowerCase()}`} onClick={() => setIsMenuOpen(false)} className="hover:text-orange-500 transition-colors">{item}</a>
+        {['Home', 'About', 'Services', 'Works', 'Tools'].map((item) => (
+          <a key={item} href={`#${item.toLowerCase() === 'tools' ? 'services' : item.toLowerCase() === 'works' ? 'works' : item.toLowerCase()}`} onClick={() => setIsMenuOpen(false)} className="hover:text-orange-500 transition-colors">{item}</a>
         ))}
         <button onClick={() => window.open("https://wa.me/917404977405", "_blank")} className="mt-4 bg-gradient-to-r from-orange-500 to-red-600 text-white px-10 py-4 rounded-full font-black shadow-lg">Hire Me</button>
       </div>
@@ -287,8 +332,8 @@ export default function App() {
           </p>
           <div className="hero-animate flex flex-col sm:flex-row gap-4 md:gap-6 items-center">
            
-            <button onClick={() => scrollToSection('longform')} className="btn-glow px-10 md:px-12 py-4 md:py-5 bg-gradient-to-br from-orange-500 to-red-600 text-white rounded-xl md:rounded-2xl font-black shadow-xl transition-all uppercase tracking-widest text-xs md:text-sm flex items-center gap-3 hover:brightness-110 active:scale-95">
-              VIEW PROJECTS
+            <button onClick={() => scrollToSection('works')} className="btn-glow px-10 md:px-12 py-4 md:py-5 bg-gradient-to-br from-orange-500 to-red-600 text-white rounded-xl md:rounded-2xl font-black shadow-xl transition-all uppercase tracking-widest text-xs md:text-sm flex items-center gap-3 hover:brightness-110 active:scale-95">
+              VIEW WORKS
             </button>
           </div>
         </div>
@@ -415,79 +460,74 @@ export default function App() {
         </div>
       </section>
 
-      {/* LONG FORM PROJECTS */}
-      <section id="longform" className="py-10 md:py-16 bg-[#0d0d0f] border-y border-white/5 px-4 md:px-6">
+      {/* WORKS */}
+      <section id="works" className="py-10 md:py-16 bg-[#0d0d0f] border-y border-white/5 px-4 md:px-6 min-h-[500px]">
         <div className="max-w-7xl mx-auto">
           <div className="mb-12 text-center reveal">
-            <h2 className="text-4xl md:text-6xl font-black text-white mb-3 uppercase tracking-tighter">Long Form Videos</h2>
+            <h2 className="text-4xl md:text-6xl font-black text-white mb-3 uppercase tracking-tighter">My Projects</h2>
             <div className="h-1 w-24 md:w-32 bg-gradient-to-r from-orange-500 to-red-600 rounded-full mx-auto"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-10">
-            {ytProjects.slice(0, visibleLongForm).map((project) => (
-              <HoverVideoCard 
-                key={project.id}
-                videoSrc={project.videoSrc}
-                isVertical={false}
-                duration={project.duration}
-                showBadge={true}
-                onClick={() => setActiveVideo({ src: project.videoSrc, isVertical: false })}
-              />
-            ))}
-          </div>
-          <div className="flex flex-wrap justify-center gap-4 reveal">
-            {ytProjects.length > visibleLongForm && <button onClick={() => setVisibleLongForm(prev => prev + 2)} className="flex items-center gap-3 px-8 py-3 bg-white/5 border border-white/10 hover:border-orange-500 text-white rounded-full font-black uppercase tracking-widest text-xs transition-all group">Show More Videos <Plus className="w-4 h-4 group-hover:rotate-90 transition-transform" /></button>}
-            {visibleLongForm > INITIAL_LONG_FORM && <button onClick={() => { setVisibleLongForm(INITIAL_LONG_FORM); scrollToSection('longform'); }} className="flex items-center gap-3 px-8 py-3 bg-white/5 border border-white/10 hover:border-red-500 text-white rounded-full font-black uppercase tracking-widest text-xs transition-all">Show Less <Minus className="w-4 h-4" /></button>}
-          </div>
-        </div>
-      </section>
-
-      {/* REELS & SHORTS */}
-      <section id="shorts" className="py-10 md:py-16 bg-[#0a0a0c] border-b border-white/5 px-4 md:px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-12 text-center reveal">
-            <h2 className="text-4xl md:text-6xl font-black text-white mb-3 uppercase tracking-tighter">Reels & Shorts</h2>
-            <div className="h-1 w-24 md:w-32 bg-gradient-to-r from-orange-500 to-red-600 rounded-full mx-auto"></div>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-10">
-            {reelProjects.slice(0, visibleShorts).map((reel) => (
-              <HoverVideoCard 
-                key={reel.id}
-                videoSrc={reel.videoSrc}
-                isVertical={true}
-                showBadge={false}
-                onClick={() => setActiveVideo({ src: reel.videoSrc, isVertical: true })}
-              />
-            ))}
-          </div>
-          <div className="flex flex-wrap justify-center gap-4 reveal">
-            {reelProjects.length > visibleShorts && <button onClick={() => setVisibleShorts(prev => prev + 4)} className="flex items-center gap-3 px-8 py-3 bg-white/5 border border-white/10 hover:border-orange-500 text-white rounded-full font-black uppercase tracking-widest text-xs transition-all group">Show More <Plus className="w-4 h-4 group-hover:rotate-90 transition-transform" /></button>}
-            {visibleShorts > INITIAL_SHORTS && <button onClick={() => { setVisibleShorts(INITIAL_SHORTS); scrollToSection('shorts'); }} className="flex items-center gap-3 px-8 py-3 bg-white/5 border border-white/10 hover:border-red-500 text-white rounded-full font-black uppercase tracking-widest text-xs transition-all">Show Less <Minus className="w-4 h-4" /></button>}
-          </div>
-        </div>
-      </section>
-
-      {/* VIDEOGRAPHY */}
-      <section id="videography" className="py-10 md:py-16 bg-[#0a0a0c] border-b border-white/5 px-4 md:px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-12 text-center reveal">
-            <h2 className="text-4xl md:text-6xl font-black text-white mb-3 uppercase tracking-tighter">Videography</h2>
-            <div className="h-1 w-24 md:w-32 bg-gradient-to-r from-orange-500 to-red-600 rounded-full mx-auto"></div>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-10">
-            {shootproject.slice(0, visibleShoots).map((shoot) => (
-              <HoverVideoCard 
-                key={shoot.id}
-                videoSrc={shoot.videoSrc}
-                isVertical={true}
-                showBadge={false}
-                onClick={() => setActiveVideo({ src: shoot.videoSrc, isVertical: true })}
-              />
-            ))}
-          </div>
-          <div className="flex flex-wrap justify-center gap-4 reveal">
-            {shootproject.length > visibleShoots && <button onClick={() => setVisibleShoots(prev => prev + 4)} className="flex items-center gap-3 px-8 py-3 bg-white/5 border border-white/10 hover:border-orange-500 text-white rounded-full font-black uppercase tracking-widest text-xs transition-all group">Show More <Plus className="w-4 h-4 group-hover:rotate-90 transition-transform" /></button>}
-            {visibleShoots > INITIAL_SHOOTS && <button onClick={() => { setVisibleShoots(INITIAL_SHOOTS); scrollToSection('videography'); }} className="flex items-center gap-3 px-8 py-3 bg-white/5 border border-white/10 hover:border-red-500 text-white rounded-full font-black uppercase tracking-widest text-xs transition-all">Show Less <Minus className="w-4 h-4" /></button>}
-          </div>
+          
+          {!activeFolder ? (
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6 reveal">
+              {workFolders.map(folder => (
+                <div 
+                  key={folder.id} 
+                  onClick={() => handleFolderClick(folder)} 
+                  className="flex flex-col items-center justify-center p-6 md:p-8 w-[calc(50%-0.5rem)] md:w-[calc(33.33%-1rem)] lg:w-[calc(25%-1.125rem)] max-w-[260px] bg-white/5 border border-white/10 rounded-[2rem] hover:bg-white/10 hover:border-orange-500/50 cursor-pointer transition-all duration-300 group shadow-lg hover:shadow-orange-500/10"
+                >
+                  <Folder className="w-12 h-12 md:w-16 md:h-16 text-orange-500 mb-4 group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_15px_rgba(249,115,22,0.4)]" />
+                  <h3 className="text-base md:text-lg font-black text-white uppercase text-center tracking-tight">{folder.name}</h3>
+                  <p className="text-[10px] md:text-xs text-slate-400 mt-2 font-medium uppercase tracking-widest">{folder.videos.length} Videos</p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="reveal">
+              <button 
+                onClick={() => setActiveFolder(null)} 
+                className="flex items-center gap-2 text-orange-500 hover:text-white transition-colors mb-10 font-bold uppercase tracking-widest text-sm"
+              >
+                <ArrowLeft className="w-5 h-5" /> Back to Folders
+              </button>
+              
+              <h3 className="text-3xl md:text-4xl font-black text-white uppercase mb-10 border-l-4 border-orange-500 pl-4">{activeFolder.name}</h3>
+              
+              {activeFolder.videos.length > 0 ? (
+                <>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8 mb-10">
+                    {activeFolder.videos.slice(0, visibleVideos).map((video) => (
+                      <HoverVideoCard 
+                        key={video.id}
+                        videoSrc={video.videoSrc}
+                        isVertical={video.isVertical}
+                        duration={video.duration}
+                        showBadge={!!video.duration}
+                        onClick={() => setActiveVideo({ src: video.videoSrc, isVertical: video.isVertical })}
+                      />
+                    ))}
+                  </div>
+                  <div className="flex flex-wrap justify-center gap-4">
+                    {activeFolder.videos.length > visibleVideos && (
+                      <button onClick={() => setVisibleVideos(prev => prev + 4)} className="flex items-center gap-3 px-8 py-3 bg-white/5 border border-white/10 hover:border-orange-500 text-white rounded-full font-black uppercase tracking-widest text-xs transition-all group">
+                        Show More <Plus className="w-4 h-4 group-hover:rotate-90 transition-transform" />
+                      </button>
+                    )}
+                    {visibleVideos > INITIAL_VIDEOS && (
+                      <button onClick={() => { setVisibleVideos(INITIAL_VIDEOS); scrollToSection('works'); }} className="flex items-center gap-3 px-8 py-3 bg-white/5 border border-white/10 hover:border-red-500 text-white rounded-full font-black uppercase tracking-widest text-xs transition-all">
+                        Show Less <Minus className="w-4 h-4" />
+                      </button>
+                    )}
+                  </div>
+                </>
+              ) : (
+                <div className="text-center py-20 bg-white/5 rounded-[2rem] border border-white/10">
+                  <Folder className="w-16 h-16 text-slate-600 mx-auto mb-4" />
+                  <p className="text-slate-400 text-lg font-medium">No videos in this folder yet.</p>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </section>
 
@@ -544,7 +584,7 @@ export default function App() {
                 <ul className="space-y-2">
                   <li><a href="#home" className="hover:text-orange-500 transition-colors">Home</a></li>
                   <li><a href="#about" className="hover:text-orange-500 transition-colors">About</a></li>
-                  <li><a href="#longform" className="hover:text-orange-500 transition-colors">Projects</a></li>
+                  <li><a href="#works" className="hover:text-orange-500 transition-colors">Works</a></li>
                 </ul>
               </div>
               <div className="space-y-4">
